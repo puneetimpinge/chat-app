@@ -39,12 +39,6 @@ GEM
     arel (6.0.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    blather (1.0.0)
-      activesupport (>= 2.3.11)
-      eventmachine (>= 1.0.0)
-      girl_friday
-      niceogiri (~> 1.0)
-      nokogiri (~> 1.5, >= 1.5.6)
     builder (3.2.2)
     byebug (4.0.5)
       columnize (= 0.9.0)
@@ -57,15 +51,9 @@ GEM
       execjs
     coffee-script-source (1.9.1.1)
     columnize (0.9.0)
-    connection_pool (1.2.0)
-    daemons (1.1.9)
     debug_inspector (0.0.2)
     erubis (2.7.0)
-    eventmachine (1.0.7)
     execjs (2.5.2)
-    girl_friday (0.11.2)
-      connection_pool (~> 1.0)
-      rubinius-actor
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -86,8 +74,6 @@ GEM
     mini_portile (0.6.2)
     minitest (5.6.0)
     multi_json (1.11.0)
-    niceogiri (1.1.2)
-      nokogiri (~> 1.5)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     pg (0.18.1)
@@ -125,9 +111,6 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
-    rubinius-actor (0.0.2)
-      rubinius-core-api
-    rubinius-core-api (0.0.1)
     sass (3.4.13)
     sass-rails (5.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -167,10 +150,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  blather
   byebug
   coffee-rails (~> 4.1.0)
-  daemons
   jbuilder (~> 2.0)
   jquery-rails
   pg

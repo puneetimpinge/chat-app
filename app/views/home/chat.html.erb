@@ -1,21 +1,23 @@
-<% if session.has_key?('user1') && session.has_key?('user2') %>
-	<%= "#{session[:user1]} connected with #{session[:user2]}" %>
-<% end %>
+<div class="container">
+	<% if session.has_key?('user1') && session.has_key?('user2') %>
+		<%= "#{session[:user1]} connected with #{session[:user2]}" %>
+	<% end %>
 
-<br/><br/>
+	<br/><br/>
 
-<div id="message_area" style="width:299px;height:200px;border:1px solid"></div>
+	<div id="message_area" style="width:219px;height:200px;border:1px solid"></div>
 
-<textarea id="message" class="form-control" rows="3" cols="35"></textarea>
-<a href="#" id="mybtn" class="btn btn-primary btn-lg active" role="button">Send</a>
-<input type="hidden" id="user_1" value="<%= session[:user1]%>" />
-<input type="hidden" id="user_2" value="<%= session[:user2]%>" />
-<input type="hidden" id="password" value="<%= session[:password]%>" />
+	<textarea id="message" rows="3" cols="35"></textarea>
+	<a href="#" id="mybtn" class="btn btn-primary btn-lg active" role="button">Send</a>
+	<input type="hidden" id="user_1" value="<%= session[:user1]%>" />
+	<input type="hidden" id="user_2" value="<%= session[:user2]%>" />
+	<input type="hidden" id="password" value="<%= session[:password]%>" />
 
 
-<br/><br/>
-<button><a href="/">Back</a></button>
+	<br/><br/>
+	<a href="/" class="btn">Back</a>
 
+</div>
 <script type="text/javascript">
 
     $('#mybtn').click(function(){
@@ -28,8 +30,10 @@
             url: 'send_message',
             data: 'message='+message+'&user_1='+user_1+'&user_2='+user_2+'&password='+password,
             success: function (response) {
+            	$("#message").val("")
             	if(response.status == true){
             		$("#message_area").append(user_1+":"+message)
+            		$("#message").val("")
             	}else{
             		alert('Something went gone wrong. Please try again.')
             	}

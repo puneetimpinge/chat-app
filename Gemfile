@@ -46,5 +46,5 @@ end
 gem 'pry'
 #gem 'xmpp4r-bot', github: "manusajith/xmpp4r-bot"
 gem 'xmpp4r'
-gem 'daemons'
-gem 'blather'
+#gem 'daemons'
+#gem 'blather'
