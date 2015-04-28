@@ -21,23 +21,29 @@
 <script type="text/javascript">
 
     $('#mybtn').click(function(){
-    	var message = $('#message').val();
-    	var user_1 = $('#user_1').val();
-    	var user_2 = $('#user_2').val();
-    	var password = $('#password').val()
-        $.ajax({
-            type: 'post',
-            url: 'send_message',
-            data: 'message='+message+'&user_1='+user_1+'&user_2='+user_2+'&password='+password,
-            success: function (response) {
-            	$("#message").val("")
-            	if(response.status == true){
-            		$("#message_area").append(user_1+":"+message)
-            		$("#message").val("")
-            	}else{
-            		alert('Something went gone wrong. Please try again.')
-            	}
-            }
-        })
+    	if ($('#message').val() == ""){
+    		alert('Please Enter Message.')
+    	}else{
+	    	$("#mybtn").html("Sending...")
+	    	var message = $('#message').val();
+	    	var user_1 = $('#user_1').val();
+	    	var user_2 = $('#user_2').val();
+	    	var password = $('#password').val()
+	        $.ajax({
+	            type: 'post',
+	            url: 'send_message',
+	            data: 'message='+message+'&user_1='+user_1+'&user_2='+user_2+'&password='+password,
+	            success: function (response) {
+	            	$("#message").val("")
+	            	if(response.status == true){
+	            		$("#message_area").append("<span style='color:blue'>"+user_1+"</span>:"+message)
+	            		$("#message").val("")
+	            	}else{
+	            		alert('Something went gone wrong. Please try again.')
+	            	}
+	            	$("#mybtn").html("Send")
+	            }
+	        })
+	    }    
     })
 </script>
