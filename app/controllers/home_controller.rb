@@ -30,7 +30,7 @@ class HomeController < ApplicationController
 		cl.auth(myPassword)
 		body = "#{params[:message]}"
 		#body = STDIN.readlines.join
-		m = Message.new(to, body).set_type(:normal).set_id('1').set_subject(subject)
+		m = Message.new(to, body).set_type(:chat).set_id('2').set_subject(subject)
 		puts m.to_s
 		cl.send(m)
 		cl.close

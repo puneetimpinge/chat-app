@@ -5,7 +5,7 @@
 
 	<br/><br/>
 
-	<div id="message_area" style="width:219px;height:200px;border:1px solid"></div>
+	<div id="message_area" style="width:219px;height:200px;border:1px solid;word-wrap: break-word;"></div>
 
 	<textarea id="message" rows="3" cols="35"></textarea>
 	<a href="#" id="mybtn" class="btn btn-primary btn-lg active" role="button">Send</a>
@@ -36,7 +36,7 @@
 	            success: function (response) {
 	            	$("#message").val("")
 	            	if(response.status == true){
-	            		$("#message_area").append("<span style='color:blue'>"+user_1+"</span>:"+message)
+	            		$("#message_area").append("<br/><span style='color:blue'>"+user_1+"</span>:"+message)
 	            		$("#message").val("")
 	            	}else{
 	            		alert('Something went gone wrong. Please try again.')
